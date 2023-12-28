@@ -12,6 +12,11 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { BlogDashboardComponent } from './blog-dashboard/blog-dashboard.component';
+import { BlogListComponent } from './blog-list/blog-list.component';
+import { ApiService } from './api.service';
+import { BlogService } from './blog.service';
+import { HoverDirective } from './custom directive/hover.directive';
+import { OhoverDirective } from './custom directive/ohover.directive';
 
 @NgModule({
   declarations: [
@@ -22,7 +27,10 @@ import { BlogDashboardComponent } from './blog-dashboard/blog-dashboard.componen
     AboutComponent,
     ContactComponent,
     NavigationComponent,
-    BlogDashboardComponent
+    BlogDashboardComponent,
+    BlogListComponent,
+    HoverDirective,
+    OhoverDirective
   ],
   imports: [
     BrowserModule,
@@ -31,7 +39,7 @@ import { BlogDashboardComponent } from './blog-dashboard/blog-dashboard.componen
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [ApiService, BlogService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

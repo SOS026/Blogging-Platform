@@ -1,0 +1,64 @@
+<!-- src/app/blog-list/blog-list.component.html -->
+<div class="blog-list">
+    <div class="BL" appHover><h2>Blog List</h2></div>
+    <div *ngFor="let blog of blogs" appHover>
+      <h3>{{ blog.title }}</h3>
+      <p>Auther: {{ blog.auther }}</p>
+      <p>Date: {{ blog.date }}</p>
+      <p>{{ blog.content }}</p>
+      <hr>
+    </div>
+</div>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="vlog-list">
+
+    <div *ngFor="let vlog of vlogData" class="vlog-card">
+
+        <h3>{{ vlog.title }}</h3>
+
+        <p>{{ vlog.date }}</p>
+        <a [routerLink]="['/Blog/', vlog.id]">View Details</a>
+
+    </div>
+
+</div>
+ -->
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="vlog-list">
+
+    <div *ngFor="let vlog of vlogData" class="vlog-card">
+
+        <h3>{{ vlogData.title }}</h3>
+
+        <p>{{ vlogData.date }}</p>
+        <a [routerLink]="['/Blog/', vlog.id]">View Details</a>
+
+    </div>
+
+</div> -->

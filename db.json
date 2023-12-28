@@ -1,0 +1,34 @@
+{
+  "blogs": [
+    {
+      "id": 1,
+      "title": "Blog 1",
+      "auther": "Roman",
+      "date": "12-10-2023",
+      "content": "Hello Guys, I am Roman and this is my first blog."
+    },
+    {
+      "id": 2,
+      "title": "Blog 2",
+      "auther": "David",
+      "date": "23/11/2022",
+      "content": "Content, content and content"
+    },
+    {
+      "id": 3,
+      "title": "Blog 3",
+      "auther": "Erim",
+      "date": "11/02/23",
+      "content": "Abcdefghijklmnopqrstuvwxyz"
+    }
+  ],
+  "bloggers": [
+    {
+      "fullname": "Vikas",
+      "email": "test@testing.com",
+      "password": "123456789",
+      "mobile": 1112220000,
+      "id": 1
+    }
+  ]
+}

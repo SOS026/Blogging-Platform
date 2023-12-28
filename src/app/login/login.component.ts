@@ -10,11 +10,31 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  
-  constructor() {}
+  public loginForm !: FormGroup
+  constructor(private formBuilder: FormBuilder, private http: HttpClient, private router: Router) {}
     ngOnInit(): void {
-     
+      this.loginForm = this.formBuilder.group({
+        email:[''],
+        password:['']
+      })
   }
 
+  login(){
+    this.http.get<any>("http://localhost:3000/bloggers")
+    .subscribe(res=>{
+      const user = res.find((a:any)=>{
+        return a.email === this.loginForm.value.email && a.password === this.loginForm.value.password;
+      });
+      if(user){
+        alert("Login Success");
+        this.loginForm.reset();
+        this.router.navigate(['home'])
+      } else{
+        alert('Please check your Email or Password');
+      }
+    }, err=>{
+      alert("Something went wrong!!")
+    })
+  }
 
 }
