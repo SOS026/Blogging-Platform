@@ -6,7 +6,16 @@
         <li routerLinkActive="active-link"><a routerLink="/contact"><b>Contact</b></a></li>
         <li routerLinkActive="active-link"><a routerLink="/blog-dashboard"><b>Blogs</b></a></li>
         <li routerLinkActive="active-link"><a routerLink="/blog-list"><b>BlogList</b></a></li>
+        <li routerLinkActive="active-link"><a routerLink="login"><b>LogIn</b></a></li>
 
     </ul>
+    <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search"  placeholder="Search" aria-label="Search">
+        <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+    <!-- <div class="form-group">
+        <input type="text" class="form-control" [(ngModel)]="searchTerm" (keyup)="search($event)" placeholder="search products">
+    </div> -->
+    <!-- <span class="fas fa-search search-icon"></span> -->
 
 </nav>

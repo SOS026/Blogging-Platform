@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,14 +10,14 @@ import { Router } from '@angular/router';
 })
 export class SignupComponent implements OnInit {
 
-  public signupForm !: FormGroup;
-  constructor(private formBuilder : FormBuilder, private http: HttpClient, private router: Router){}
+  public signupForm : FormGroup; // this signupForm property will hold this signup form
+  constructor(private formBuilder : FormBuilder, private http: HttpClient, private router: Router){}  //injecting FormBuilder, HttpClient and Router inside constructor
   ngOnInit(): void{
-    this.signupForm = this.formBuilder.group({
-      fullname: [''],
-      email: [''],
-      password: [''],
-      mobile: ['']
+    this.signupForm = this.formBuilder.group({           //initializing the form, formbuilder will group 
+      fullname: ['', Validators.required],  // form controls
+      email: ['', Validators.required],
+      password: ['', Validators.required],
+      mobile: ['', Validators.required]
     })
   }
   signUp(){

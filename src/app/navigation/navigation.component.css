@@ -45,3 +45,29 @@ nav div button{
 #bb{
     margin-left: 10%;
 } */
+
+/* Add this CSS to your stylesheet or in a style block within your HTML file */
+
+/* Style for the form container */
+.form-inline {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+  }
+  
+  /* Style for the search input */
+.form-control {
+    width: 100%;
+    margin-right: 5px;
+  }
+  
+  /* Style for the search button */
+.btn {
+    margin-top: 3px;
+  }
+
+  /* .form-control {
+    border-radius: 300px;
+    width: 600px;
+    margin-left: 300px;
+} */

@@ -1,13 +1,6 @@
 {
   "blogs": [
     {
-      "id": 1,
-      "title": "Blog 1",
-      "auther": "Roman",
-      "date": "12-10-2023",
-      "content": "Hello Guys, I am Roman and this is my first blog."
-    },
-    {
       "id": 2,
       "title": "Blog 2",
       "auther": "David",
@@ -20,6 +13,41 @@
       "auther": "Erim",
       "date": "11/02/23",
       "content": "Abcdefghijklmnopqrstuvwxyz"
+    },
+    {
+      "id": 9,
+      "title": "Travelling",
+      "auther": "Sourabh",
+      "date": "29 December",
+      "content": "Full enjoyment"
+    },
+    {
+      "id": 10,
+      "title": "sj@nnc.kon",
+      "auther": "cfj",
+      "date": "[pkj ",
+      "content": "hcjgvkb nm,"
+    },
+    {
+      "id": 12,
+      "title": "khg",
+      "auther": "nmbm",
+      "date": "nm",
+      "content": "nb"
+    },
+    {
+      "id": 13,
+      "title": "sj@nnc.kon",
+      "auther": "S",
+      "date": "Dha",
+      "content": "Setu Anthony"
+    },
+    {
+      "id": 14,
+      "title": "test@testing.com",
+      "auther": null,
+      "date": null,
+      "content": null
     }
   ],
   "bloggers": [
@@ -29,6 +57,27 @@
       "password": "123456789",
       "mobile": 1112220000,
       "id": 1
+    },
+    {
+      "fullname": "Surender",
+      "email": "sj@nnc.kon",
+      "password": "qwerty1234",
+      "mobile": 90000000,
+      "id": 2
+    },
+    {
+      "fullname": "",
+      "email": "",
+      "password": "",
+      "mobile": "",
+      "id": 3
+    },
+    {
+      "fullname": "9999",
+      "email": "11111@gmail.com",
+      "password": "1111",
+      "mobile": 101010101010,
+      "id": 4
     }
   ]
 }

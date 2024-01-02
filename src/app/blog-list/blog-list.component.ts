@@ -1,7 +1,7 @@
-// src/app/blog-list/blog-list.component.ts
 import { Component, OnInit } from '@angular/core';
 import { BlogService } from '../blog.service';
 import { Blog } from '../blog.model';
+// import { SearchPipe } from '../search.pipe';
 
 @Component({
   selector: 'app-blog-list',
@@ -10,6 +10,7 @@ import { Blog } from '../blog.model';
 })
 export class BlogListComponent implements OnInit {
   blogs: Blog[] = [];
+  // public searchTerm !: any;    //The ! indicates that the variable will be initialized later.
 
   constructor(private blogService: BlogService) {}
 
@@ -18,8 +19,8 @@ export class BlogListComponent implements OnInit {
   }
 
   private loadBlogs() {
-    this.blogService.getBlogs().subscribe((blogs) => {
-      this.blogs = blogs;
+    this.blogService.getBlogs().subscribe((data) => {
+      this.blogs = data;
     });
   }
 }

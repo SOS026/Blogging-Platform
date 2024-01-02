@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-login',
@@ -10,12 +11,12 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  public loginForm !: FormGroup
-  constructor(private formBuilder: FormBuilder, private http: HttpClient, private router: Router) {}
+  public loginForm : FormGroup
+  constructor(private formBuilder: FormBuilder, private http: HttpClient, private router: Router, private authService: AuthService) {}
     ngOnInit(): void {
-      this.loginForm = this.formBuilder.group({
-        email:[''],
-        password:['']
+      this.loginForm = this.formBuilder.group({    //initializing the form, formbuilder will group
+        email:['', Validators.required],   // form controls
+        password:['', Validators.required]
       })
   }
 
@@ -27,8 +28,9 @@ export class LoginComponent implements OnInit {
       });
       if(user){
         alert("Login Success");
+        this.authService.login();
         this.loginForm.reset();
-        this.router.navigate(['home'])
+        this.router.navigate(['blog-dashboard'])
       } else{
         alert('Please check your Email or Password');
       }

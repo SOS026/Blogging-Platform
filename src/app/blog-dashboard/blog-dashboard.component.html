@@ -20,10 +20,10 @@
         <div class="modal-body">
           <form [formGroup]="formValue">
   
-            <div class="mb-3">
+            <!-- <div class="mb-3">
               <label for="id" class="form-label">ID</label>
               <input type="number" formControlName="id" class="form-control">
-            </div>
+            </div> -->
   
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Title</label>
@@ -47,7 +47,7 @@
         </div>
   
         <div class="modal-footer">
-          <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" id="close" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
           <button type="button" *ngIf="showAdd" (click)="postBlogDetails()" class="btn btn-primary">Add Blog</button>
           <button type="button" *ngIf="showUpdate" (click)="updateBlogDetails()" class="btn btn-primary">Update Blog</button>
         </div>

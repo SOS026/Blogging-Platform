@@ -17,6 +17,10 @@ import { ApiService } from './api.service';
 import { BlogService } from './blog.service';
 import { HoverDirective } from './custom directive/hover.directive';
 import { OhoverDirective } from './custom directive/ohover.directive';
+import { BlogGuardService } from './blog-guard.service';
+import { CustompipePipe } from './custompipe.pipe';
+import { ErrorComponent } from './error/error.component';
+import { SearchPipe } from './search.pipe';
 
 @NgModule({
   declarations: [
@@ -30,7 +34,10 @@ import { OhoverDirective } from './custom directive/ohover.directive';
     BlogDashboardComponent,
     BlogListComponent,
     HoverDirective,
-    OhoverDirective
+    OhoverDirective,
+    CustompipePipe,
+    ErrorComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,
@@ -39,7 +46,7 @@ import { OhoverDirective } from './custom directive/ohover.directive';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [ApiService, BlogService],
+  providers: [ApiService, BlogService, BlogGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
