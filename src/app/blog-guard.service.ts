@@ -19,7 +19,7 @@ export class BlogGuardService implements CanActivate {
 
     else {
       alert("You are not logged in, please login before you add your blog!!")
-      this.router.navigate(['login']);
+      this.router.navigate(['/login']);
       return false;
     }
   }

@@ -1,5 +1,5 @@
 export interface Blog {
-    title: any;
+    title: string;
     auther: string;
     date: string;
     content: string;

@@ -3,6 +3,10 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { BlogModel } from '../users.model';
 import { ApiService } from '../api.service';
 import { Validators } from '@angular/forms';
+import { AuthService } from '../auth.service';
+import { Router } from '@angular/router';
+
+// import { SearchPipe } from '../search.pipe';
 
 @Component({
   selector: 'app-blog-dashboard',
@@ -17,7 +21,11 @@ export class BlogDashboardComponent implements OnInit {
   blogData : any;
   showAdd : boolean;
   showUpdate : boolean;
-  constructor(private formbuilder: FormBuilder, private api: ApiService) {}
+  // searchText: any;
+
+  // public searchTerm !: any;    //The ! indicates that the variable will be initialized later.
+
+  constructor(private formbuilder: FormBuilder, private api: ApiService,private auth : AuthService,private router : Router) {}
   
   ngOnInit(): void {
     this.formValue = this.formbuilder.group({        //initializing the form, formbuilder will group
@@ -71,15 +79,15 @@ export class BlogDashboardComponent implements OnInit {
       this.getAllBlog();
     })
   }
-  onEdit(row: any){
+  onEdit(ro: any){
     this.showAdd = false;
     this.showUpdate = true;
-    this.blogModelObj.id = row.id;
-    console.log(row.id)
-    this.formValue.controls['title'].setValue(row.title);
-    this.formValue.controls['auther'].setValue(row.auther);
-    this.formValue.controls['date'].setValue(row.date);
-    this.formValue.controls['content'].setValue(row.content);
+    this.blogModelObj.id = ro.id;
+    console.log(ro.id)
+    this.formValue.controls['title'].setValue(ro.title);
+    this.formValue.controls['auther'].setValue(ro.auther);
+    this.formValue.controls['date'].setValue(ro.date);
+    this.formValue.controls['content'].setValue(ro.content);
   }
   updateBlogDetails(){
     this.blogModelObj.title = this.formValue.value.title;
@@ -96,5 +104,14 @@ export class BlogDashboardComponent implements OnInit {
       this.getAllBlog();
     })
   }
+
+
+  logout(){
+
+    this.auth.logout();
+    this.router.navigate(["/login"])
+
+  }
+  
   
 }

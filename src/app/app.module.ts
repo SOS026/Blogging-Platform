@@ -21,6 +21,8 @@ import { BlogGuardService } from './blog-guard.service';
 import { CustompipePipe } from './custompipe.pipe';
 import { ErrorComponent } from './error/error.component';
 import { SearchPipe } from './search.pipe';
+import { SearchComponent } from './search/search.component';
+// import { Ng2SearchPipe, Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,9 @@ import { SearchPipe } from './search.pipe';
     OhoverDirective,
     CustompipePipe,
     ErrorComponent,
-    SearchPipe
+    SearchPipe,
+    SearchComponent,
+    // Ng2SearchPipe
   ],
   imports: [
     BrowserModule,

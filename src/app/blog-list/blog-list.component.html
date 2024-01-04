@@ -1,19 +1,24 @@
+<div>
+<app-search (searchTextChanged)="onSearchTextEntered($event)" ></app-search>
+</div>
 <div class="blog-list">
     <div class="BL" appOhover><h2>Blog List</h2></div>
     <div *ngFor="let item of blogs" appHover>
-      <h3>{{ item.title | custompipe }}</h3>
-      <p>Auther: {{ item.auther }}</p>
-      <p>Date: {{ item.date }}</p>
-      <p>{{ item.content }}</p>
-      <hr>
+        <div *ngIf="searchText==='' || item.title.toLowerCase().includes(searchText) ">
+          <h3>Title: {{ item.title | custompipe }}</h3>
+          <p>Auther: {{ item.auther }}</p>
+          <p>Date: {{ item.date }}</p>
+          <p>{{ item.content }}</p>
+          <hr>
+        </div>
     </div>
 </div>
   
 <!-- <ul>
-    <li *ngFor="let item of blogs | search: searchTerm">{{ item.title }}</li>
+    <li *ngFor="let item of blogs | search: searchTerm">{{ item.tit }}</li>
   </ul> -->
 
-
+<!-- *ngIf="searchText=== ''|| item.title.toLowerCase().includes(searchText)" -->
 
 
 
